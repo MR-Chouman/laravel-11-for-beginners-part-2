@@ -32,6 +32,8 @@ class CategoryController extends Controller
         Category::create([
             'name' => $request->input('name'),
         ]);
+
+        return redirect()->route('categories.index');
     }
 
     /**
