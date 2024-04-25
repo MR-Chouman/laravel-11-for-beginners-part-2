@@ -65,7 +65,13 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $post->update([
+            'title' => $request->input('title'),
+            'text' => $request->input('text'),
+            'category_id' => $request->input('category_id'),
+        ]);
+
+        return redirect()->route('posts.index');
     }
 
     /**
